@@ -8,7 +8,24 @@
 	\maketitle
 	
 	\section{Higher-order functions}
+	Higher-order functions are functions that do at least one of the following actions:
+	\begin{itemize}
+		\item takes one or more functions as a parameter
+		\item outputs a function
+	\end{itemize}
 	
-	
+	The most notable examples are: map, fold and filter.
+	The implementation in Java of higher functions using lists
+	requires the following classes/interfaces:
+	\begin{description}
+		\item[List.java] Defines the interface for Nil and Cons
+		\item[Nil.java] Defines the empty list (base case)
+		\item[Cons.java] Defines the non-empty list (recursive case)
+		\item[Action.java] Defines a procedure/action (i.e. does not return any value)
+		\item[Function.java] Defines a 1-1 function (1 input, 1 output)
+		\item[Function2.java] Defines a 2-1 function (2 inputs, 1 output)
+		\item[Predicate.java] Defines a function that takes a single argument and returns a
+		boolean
+	\end{description}	
 	
 \end{document}
