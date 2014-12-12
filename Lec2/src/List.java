@@ -1,3 +1,4 @@
+package src;
 
 public interface List<A> {
 	public boolean isEmpty();         // Is the list empty?

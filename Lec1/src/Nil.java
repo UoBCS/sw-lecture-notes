@@ -1,3 +1,5 @@
+package src;
+
 public class Nil<E> implements MList<E>
 {
 	public Nil() {}

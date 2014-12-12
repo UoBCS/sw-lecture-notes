@@ -1,3 +1,5 @@
+package src;
+
 public interface MList<E>
 {
 	public boolean isEmpty();

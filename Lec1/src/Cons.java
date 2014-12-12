@@ -1,3 +1,5 @@
+package src;
+
 public class Cons<E> implements MList<E>
 {
 	private final E head;
