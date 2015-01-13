@@ -1,2 +1,2 @@
 # sw-lecture-notes
-Softwate Workshop 2 lecture notes
+Software Workshop 2 lecture notes
