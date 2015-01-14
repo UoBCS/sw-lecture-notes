@@ -14,7 +14,7 @@ public class Nil<E> implements MList<E>
 	
 	public MList<E> reverse()
 	{
-		return new Nil(); // or this
+		return this;
 	}
 	
 	public MList<E> append(MList<E> l)
@@ -24,7 +24,7 @@ public class Nil<E> implements MList<E>
 	
 	public MList<E> append(E el)
 	{
-		return new Cons(el, this);
+		return new Cons<E>(el, this);
 	}
 	
 	public boolean has(E el)

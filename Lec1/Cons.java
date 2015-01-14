@@ -16,27 +16,27 @@ public class Cons<E> implements MList<E>
 
 	public int size()
 	{
-		return 1 + this.size();
+		return 1 + tail.size();
 	}
 	
 	public MList<E> reverse()
 	{
-		return null; // TODO
+		return tail.reverse().append(head);
 	}
 	
 	public MList<E> append(MList<E> l)
 	{
-		return new Cons(head, tail.append(l));
+		return new Cons<E>(head, tail.append(l));
 	}
 	
 	public MList<E> append(E el)
 	{
-		return new Cons(head, tail.append(el));
+		return append(new Cons<E>(e , new Nil<E>()));
 	}
 	
 	public boolean has(E el)
 	{
-		return el == head || tail.has(el);
+		return head.equals(e) || tail.has(e);
 	}
 	
 	public String toString()
