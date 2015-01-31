@@ -1,0 +1,63 @@
+\documentclass{article}
+
+\title{Software Workshop 1 - Lecture 4 \& 5}
+\author{Ossama Edbali}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Fold}	
+	Fold is an expressive way for applying a function in a cumulative way.
+	The fold function replaces \verb|Cons|	with \verb|f| and \verb|Nil| with \verb|b| (which is the
+	initial value). The polymorphic type of the function fold is: \verb|f: 'a -> 'b -> 'b|.
+	
+	\section{Binary trees}	
+	Binary trees can be created using an interface and two implementations:
+	\begin{itemize}
+		\item Interface file: \verb|Tree|
+		\item Base case implementation: \verb|EmptyTree<E>|
+		\item Inductive case implementation: \verb|MakeTree<E>|
+	\end{itemize}
+	
+	Binary trees have a root, right and left subtrees. Every node has at most 2 children where nodes
+	with zero children are called leaves.	
+	
+	The selectors are:
+	\begin{itemize}
+		\item \verb|root| for getting the root of a BT
+		\item \verb|left| for getting the left subtree.
+		\item \verb|right| for getting the right subtree.
+	\end{itemize}
+	
+	One might use the Maybe type in order to deal with these selectors (in case we have an empty tree we
+	would return a \verb|Nothing| object).
+	
+	\section{Binary Search  Trees}	
+	BSTs are a special case of binary trees where the values of the nodes in the left subtree must be smaller
+	than the root (viceversa for the right subtree).
+	
+	The class/interface layout is:
+	\begin{itemize}
+		\item Interface file: \verb|Bst|
+		\item Base case implementation: \verb|Empty<E>|
+		\item Inductive case implementation: \verb|Fork<E extends Comparable<E>>| 
+	\end{itemize}
+	
+	\section{Notes on generics}	
+	Generics are a way in Java to implement polymorphic methods and classes.
+	\begin{verbatim}
+		public class List<E> {
+		    ...
+		}
+	\end{verbatim}
+	
+	In the class List one can use the type \verb|E| in the methods declaration.
+	But if we want to use a different type than \verb|E| in a method declaration we must use this:
+	\begin{verbatim}
+		...
+		public <B> fold(Function<E, B> f, B init) {
+		    ...
+		}
+	\end{verbatim}
+\end{document}
